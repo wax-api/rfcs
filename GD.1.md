@@ -1,4 +1,7 @@
 # 治理文件(Governance Document)
+- 状态: Draft
+- 作者: Zhang Ji zhangji@parsec.com.cn
+
 wax社区对其项目治理使用GD.1流程。
 
 ## 1. 项目管理
