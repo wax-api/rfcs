@@ -237,7 +237,7 @@ description作为最常用的字段，不属于metadata，而是可以出现在S
 ```
 
 ### 8.4. mock
-可以使用mock关键词设置如何生成测试数据，类型不限，转化为JSON Schema时，会变成X-mock这个保留字段。例如：
+可以使用mock关键词设置如何生成测试数据，类型不限，转化为JSON Schema时，会变成x-mock这个自定义字段。例如：
 ```json
 ["string", "姓名", {"mock": "@cname"}]
 ```
