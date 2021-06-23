@@ -35,6 +35,23 @@
    * 简单类型："string", "number", "integer", "boolean", "null"。
    * 复合类型："object", "array"。在Wax Schema中一般不会显式使用集合类型关键词，因为有具体语法可以代替，除非只是希望笼统地表示类型。
 
+## 2.1. 限定信息
+如下这个Wax Schema可以定义一个人：
+```json
+{
+    "name": "string",
+    "age": "integer"
+}
+```
+但如果要定义一个成年人，就需要对年龄字段做限定，变成：
+```json
+{
+    "name": "string",
+    "age": ["integer", {"minimum": 18}]
+}
+```
+所以用来定义类型的Schema，既可以只是类型关键字，也可以是形如`[类型关键字，限定信息]`的数组。
+
 ## 3. 简单类型
 ### 3.1. 字符串
 string支持的类型特定参数为：
