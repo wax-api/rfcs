@@ -14,7 +14,7 @@ Wax API DSL的字段顺序是为了便于开发者理解而规定的固定顺序
     "models": {"/.+/": "#ObjectDSL"},
     "schemaLambdas": {"/.+/": "string"},  //值是python源码，返回值不重要，目的是修改传入的schema变量
     "dataLambdas": {"/.+/": "string"},  //值是python源码，返回值不重要，目的是修改传入的data变量
-    "mocks[]": "#MockDSL",
+    "mocks": "#ObjectDSL",
     "securitySchemes[]": {"/.+/": "#SecurityDSL"}
 }
 ```
