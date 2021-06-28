@@ -11,7 +11,7 @@ Wax API DSL的字段顺序是为了便于开发者理解而规定的固定顺序
 ```json5
 {
     "endpoints[]": "#EndpointDSL",
-    "models[]": "#ModelDSL",
+    "models": {"/.+/": "#ObjectDSL"},
     "schemaLambdas": {"/.+/": "string"},  //值是python源码，返回值不重要，目的是修改传入的schema变量
     "dataLambdas": {"/.+/": "string"},  //值是python源码，返回值不重要，目的是修改传入的data变量
     "mocks[]": "#MockDSL",
@@ -28,10 +28,10 @@ Wax API DSL的字段顺序是为了便于开发者理解而规定的固定顺序
   "description": "string",
   "security[]": "string",
   "requestParam": {
-    "path": "#ModelDSL",
-    "query": "#ModelDSL",
-    "header": "#ModelDSL",
-    "cookie": "#ModelDSL"
+    "path": "#ObjectDSL",
+    "query": "#ObjectDSL",
+    "header": "#ObjectDSL",
+    "cookie": "#ObjectDSL"
   },
   "requestBody": {
     "schema": "#Schema",
@@ -40,7 +40,7 @@ Wax API DSL的字段顺序是为了便于开发者理解而规定的固定顺序
   "response": {
     "/[1-5]\\d\\d/": {
       "schema": "#Schema",
-      "header": "#ModelDSL",
+      "header": "#ObjectDSL",
       "contentType": "string",
       "lambdas[]": "string"  //以#开头的是dataLambdas引用，非#开头的是源码
     }
@@ -49,8 +49,8 @@ Wax API DSL的字段顺序是为了便于开发者理解而规定的固定顺序
 }
 ```
 
-## 4. Model DSL定义
-Model DSL只能是对象类型。
+## 4. Object DSL定义
+Object DSL只能是对象类型。
 ```json
 {
     "/.+/": "#Schema"
