@@ -184,6 +184,7 @@ string支持的类型特定参数为：
 关键字：allOf, anyOf, oneOf, not。从关键字名字可以看出其含义，满足所有、满足任意、满足一个。前三个关键字的使用形式是一致的，以anyOf为例说明其形式。
 
 ### 6.1. anyOf
+可以是指定范围内的任意类型。特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组，算是一种特殊的`anyOf`。
 ```json
 [
     ["string", "object"],
@@ -263,26 +264,14 @@ description作为最常用的字段，不属于metadata，而是可以出现在S
         ],
         [
             [
-                [
-                    [
-                        "#Schema",
-                        ["#Schema", {"array": true}]
-                    ],
-                    {"logic": "anyOf"}
-                ],
+                ["#Schema", {"canBeArray": true}],
                 "object"  //Schema[1]为限定信息
             ],
             {"array": true}  //Schema类型为数组 && Schema[1]类型为对象时
         ],
         [
             [
-                [
-                    [
-                        "#Schema",
-                        ["#Schema", {"array": true}]
-                    ],
-                    {"logic": "anyOf"}
-                ],
+                ["#Schema", {"canBeArray": true}],
                 "string"  //Schema[1]为字段描述
                 "object"  //Schema[2]为限定信息
             ],
