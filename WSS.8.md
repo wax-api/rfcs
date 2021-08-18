@@ -122,7 +122,7 @@ string支持的类型特定参数为：
     "age": "integer",
     "address": {
         "city": "string",
-        "country": "USA"
+        "country": "string"
     }
 }
 ```
