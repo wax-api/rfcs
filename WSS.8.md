@@ -181,23 +181,11 @@ string支持的类型特定参数为：
 ```
 
 ## 6. 逻辑组合
-关键字：allOf, anyOf, oneOf, not。从关键字名字可以看出其含义，满足所有、满足任意、满足一个。前三个关键字的使用形式是一致的，以anyOf为例说明其形式。
-
-### 6.1. anyOf
-可以是指定范围内的任意类型。特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组，算是一种特殊的`anyOf`。
+可以是指定范围内的任一类型。特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组。
 ```json
 [
     ["string", "object"],
     {"logic": "anyOf"}
-]
-```
-
-### 6.2. not
-它告诉Json不能满足not所对应的Schema。
-```json
-[
-    "string",
-    {"logic": "not"}
 ]
 ```
 
@@ -235,12 +223,6 @@ Wax Schema的引用支持智能查找，而不需要像JSON Schema那样使用�
 description作为最常用的字段，不属于metadata，而是可以出现在Schema[1]的位置上，例如：
 ```json
 ["string", "姓名"]
-```
-
-### 8.4. mock
-可以使用mock关键词设置如何生成测试数据，类型不限，转化为JSON Schema时，会变成x-mock这个自定义字段。例如：
-```json
-["string", "姓名", {"mock": "@cname"}]
 ```
 
 ## 9. 总结
