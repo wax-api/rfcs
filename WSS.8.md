@@ -180,13 +180,17 @@ string支持的类型特定参数为：
 ["object", {"minProperties": 2, "maxProperties": 3}]
 ```
 
-## 6. 逻辑组合
-可以是指定范围内的任一类型。特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组。
+## 6. Union类型
+可以是指定范围内的任一类型。
 ```json
 [
-    ["string", "object"],
-    {"logic": "anyOf"}
+    ["string", {"weight": "number"}]
 ]
+```
+
+特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组。
+```json
+["string", {"canBeArray": True}]
 ```
 
 ## 7. 复杂结构
@@ -259,8 +263,7 @@ description作为最常用的字段，不属于metadata，而是可以出现在S
             ],
             {"array": true}  //Schema类型为数组 && Schema[1]类型为字符串 && Schema[2]类型为对象时
         ]
-    ],
-    {"logic": "anyOf"}
+    ]
 ]
 ```
 
