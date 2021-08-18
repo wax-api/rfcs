@@ -190,7 +190,7 @@ string支持的类型特定参数为：
 
 特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组。
 ```json
-["string", {"canBeArray": True}]
+["string", {"canBeArray": true}]
 ```
 
 ## 7. 复杂结构
