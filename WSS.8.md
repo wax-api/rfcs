@@ -4,7 +4,7 @@
 
 ## 1. 引言
 什么是wax Schema?
-> wax SchemaL是跟JSON Schema等价的、对人友好的规则，用来定义JSON元数据。
+> wax SchemaL是JSON Schema的子集，实现对人友好的规则，用来定义JSON元数据。
 
 假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：
 ```json
@@ -81,14 +81,6 @@ string支持的类型特定参数为：
         "integer",
         {"array": true}
     ],
-    {"array": true}
-]
-```
-
-如果Schema类型是一个数组，则要求数组内每个item按位置一一匹配：
-```json
-[
-    ["number", "string"],
     {"array": true}
 ]
 ```
@@ -181,14 +173,7 @@ string支持的类型特定参数为：
 ```
 
 ## 6. Union类型
-可以是指定范围内的任一类型。
-```json
-[
-    ["string", {"weight": "number"}]
-]
-```
-
-特别地，可以用`{"canBeArray": true}`代表即可以是数组，也可以不是数组。
+可以用`{"canBeArray": true}`代表既可以是数组，也可以不是数组。
 ```json
 ["string", {"canBeArray": true}]
 ```
